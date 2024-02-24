@@ -2,8 +2,7 @@
 # LeerMeester 🧑🏻‍🎓👩🏻‍🎓
 
 LeerMeester is an interactive learning platform that harnesses the power of Generative AI to personalize education for every student. 
-Everyone who is willing to upgrade their skills are welcomed here. 
-Let's start from a modern plateform to learn how to be regular!
+<br /> Everyone who is willing to upgrade their skills are welcomed here. 
 
 ### There are plenty of educational websites out there, but only few are modern-ai based and even among them a handful of them can provide sufficient resources/services to help out students... 
 
