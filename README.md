@@ -9,9 +9,9 @@ Let's start from a modern plateform to learn how to be regular!
 
 
 ## Tech stack used-
-React + Vite
-Express
-Flask
+React + Vite,
+Express,
+Flask,
 thinking for some other one...
 
 
