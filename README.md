@@ -7,6 +7,7 @@ Let's start from a modern plateform to learn how to be regular!
 
 ### There are plenty of educational websites out there, but only few are modern-ai based and even among them a handful of them can provide sufficient resources/services to help out students... 
 
+### Domain: AI/ML + Education 
 
 ## Tech stack used-
 React + Vite,
