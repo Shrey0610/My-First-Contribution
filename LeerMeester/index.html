@@ -9,11 +9,107 @@
 
 
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="/css/css/animate.css">
+    
+    <link rel="stylesheet" href="/css/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/css/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/css/css/magnific-popup.css">
+
+    <link rel="stylesheet" href="/css/css/aos.css">
+
+    <link rel="stylesheet" href="/css/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="/css/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="/css/css/jquery.timepicker.css">
+
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LeerMeester</title>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
+    <script>
+      var btn52 = document.getElementsByClassName("ebtn");
+      var slide = document.getElementById("slide");
+    
+      btn52[0].onclick = function() {
+        slide.style.transform = "translateX(0px)";
+    
+        for(i=0;i<4;i++){
+          btn52[i].classList.remove("pactive");
+        }
+        this.classList.add("pactive");
+      }
+    
+      btn52[1].onclick = function() {
+        slide.style.transform = "translateX(-800px)";
+        for(i=0;i<4;i++){
+          btn52[i].classList.remove("pactive");
+        }
+        this.classList.add("pactive");
+      }
+    
+      btn52[2].onclick = function() {
+        slide.style.transform = "translateX(-1600px)";
+        for(i=0;i<4;i++){
+          btn52[i].classList.remove("pactive");
+        }
+        this.classList.add("pactive");
+      }
+    
+      btn52[3].onclick = function() {
+        slide.style.transform = "translateX(-2400px)";
+        for(i=0;i<4;i++){
+          btn52[i].classList.remove("pactive");
+        }
+        this.classList.add("pactive");
+      }
+    
+      window.addEventListener('scroll', () => {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('perfixed');
+      } else {
+        navbar.classList.remove('perfixed');
+      }
+    });
+    
+    window.addEventListener('scroll', () => {
+      const anchors = document.querySelectorAll('.navbar ul li a');
+      
+      anchors.forEach(anchor => {
+        if (window.scrollY > 50) {
+          anchor.classList.add('perfixed');
+        } else {
+          anchor.classList.remove('perfixed');
+        }
+      });
+    });
+    
+    
+    
+    </script>
+    
+    <script src="/js/js/jquery.min.js"></script>
+<script src="/js/js/jquery-migrate-3.0.1.min.js"></script>
+<script src="/js/js/popper.min.js"></script>
+<script src="/js/js/bootstrap.min.js"></script>
+<script src="/js/js/jquery.easing.1.3.js"></script>
+<script src="/js/js/jquery.waypoints.min.js"></script>
+<script src="/js/js/jquery.stellar.min.js"></script>
+<script src="/js/js/owl.carousel.min.js"></script>
+<script src="/js/js/jquery.magnific-popup.min.js"></script>
+<script src="/js/js/aos.js"></script>
+<script src="/js/js/jquery.animateNumber.min.js"></script>
+<script src="/js/js/bootstrap-datepicker.js"></script>
+<script src="/js/js/jquery.timepicker.min.js"></script>
+<script src="/js/js/scrollax.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   </body>
 </html>

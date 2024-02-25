@@ -1,0 +1,19 @@
+.footer {
+    background-color: #f9eded97;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 24px;
+  }
+  
+  .footer div {
+    flex: 1 1 200px;
+    margin: 10px;
+  }
+  
+  @media (max-width: 600px) {
+    .footer {
+      flex-direction: column;
+    }
+  }
