@@ -20,7 +20,7 @@ function EduHub() {
     e.preventDefault();
     setIsLoading(true);
     try {
-      const response = await fetch('http://localhost:9005/chats', {
+      const response = await fetch('http://localhost:9000/chats', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -64,10 +64,10 @@ function EduHub() {
     </div>
     <div className="col-lg-6">
       <h1 className="display-5 fw-bold lh-1 mb-3">
-        Articles & Blogs
+       Get your references here!
       </h1>
       <p className="lead">
-      If you want references of articles and blogs then just enter the word here (for example enter: 'Plastic' and see what you get!)
+      If you want references of your topic then just enter the word here (for example enter: 'Plastic' and see what you get!)
       </p>
     </div>
   </div>

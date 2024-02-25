@@ -23,7 +23,7 @@ const ImageClassifier = ({ onPrediction }) => {
     formData.append('imagefile', imageFile);
 
     try {
-      const response = await fetch('http://localhost:9006/upload', {
+      const response = await fetch('http://localhost:9003/upload', {
         method: 'POST',
         body: formData,
       });
@@ -61,7 +61,7 @@ function Home() {
     e.preventDefault();
     setIsLoading(true); // Set loading state to true when fetching data
     try {
-      const response = await fetch('http://localhost:9005/chat', {
+      const response = await fetch('http://localhost:9000/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

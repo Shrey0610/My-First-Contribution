@@ -7,7 +7,7 @@ import EduHub from './EduHub';
 import Health from './Health';
 import Skills from './Skills';
 import Planner from './Planner';
-import Community from './Community';
+
 
 import './Footer.css';
 import {
@@ -29,10 +29,10 @@ function Navbar(){
       <div className="scrollmenu" style={{ display: 'flex', justifyContent: 'center' }}>
       <Link to="/PathForge">Path Forge</Link>
         <a href="/EduHub">EduHub</a>
-        <a href="/health">Healthy Learning</a>
         <a href="/skills">Develop skills</a>
         <a href="/planner">Planner</a>
-        <a href="/community">Community</a>
+        <a href="/health">Healthy Learning</a>
+
 
       </div>
     </div>
@@ -233,7 +233,7 @@ class App extends React.Component {
           <Route path="/health" element={<Health />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/planner" element={<Planner />} />
-          <Route path="/community" element={<Community />} />
+
 
         </Routes>
        <Footer />

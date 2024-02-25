@@ -4,7 +4,7 @@ const app = express();
 const cors = require('cors');
 
 const openai = new OpenAI({
-  apiKey: 'YOUR_API_KEY_HERE',  
+  apiKey: 'your-api-key-here',  
 });
 
 app.use(express.json());
@@ -12,7 +12,7 @@ app.use(cors());
 
 app.post('/chat', async (req, res) => {
   try {
-    const input = `Provide steps to recycle or even best out of waste for ${req.body.prompt} in points, also add links to help them.`;
+    const input = `Provide as much information about ${req.body.prompt} in points, also add links to help them. Also give them the use of it and the subject in which it is being used`;
     const response = await main(input);
     res.json({ output: response });
     console.log(response);

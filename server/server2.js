@@ -7,7 +7,7 @@ const port = 9005;
 const cors = require('cors');
 app.use(cors());
 // Initialize OpenAI API with your API key
-const openai = new OpenAI('YOUR_API_KEY_HERE');
+const openai = new OpenAI('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');
 
 // Middleware to parse JSON requests
 app.use(bodyParser.json());

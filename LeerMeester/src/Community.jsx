@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import openai from 'openai';
+import * as openai from 'openai';
 
 const Community = () => {
     const [selectedTopic, setSelectedTopic] = useState('');
@@ -14,7 +14,7 @@ const Community = () => {
     };
 
     // Initialize OpenAI API with your API key
-    const openaiApi = new openai.OpenAI('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');
+    const openaiApi = new openai.default('Your-OpenAI-API-Key-Here');
 
     useEffect(() => {
         if (selectedTopic) {
