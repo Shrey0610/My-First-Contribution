@@ -1,6 +1,13 @@
 import { useState } from 'react'
 import React from 'react';
 import './App.css';
+import App2 from './App2';
+import Home from './Home';
+import EduHub from './EduHub';
+import Health from './Health';
+import Skills from './Skills';
+import Planner from './Planner';
+import Community from './Community';
 
 import './Footer.css';
 import {
@@ -10,43 +17,33 @@ import {
   Link,
 } from "react-router-dom";
 
+
+const imagePath2 = '/LeerMeester.png';
+
 function Navbar(){
 
   return(
-  <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark" style={{ overflow: 'auto'}}>
-     
-  <div className="container-fluid">
-  <a className="navbar-brand" href="#">
-            <img className="logo" 
-              src="/LeerMeester.png"
-              alt="Bootstrap"
-              width={60}
-              height={60}
-            />
-          </a>
-  </div>
-      <center>
-<div className="scrollmenu">
-  <a href="#home">Home</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
-  <a href="#support">Support</a>
-  <a href="#blog">Blog</a>
-  <a href="/login">Login</a>
-      {/* <a href="/register"  style= {{float: 'right'}}>Register</a> */}
-</div>
+  <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark" style={{ overflow: 'auto', display: 'flex', justifyContent: 'center' }}>
+    <a className="navbar-brand" href="/"><img src={imagePath2} className="logo" alt="..." /></a>
+    <div className="container" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <div className="scrollmenu" style={{ display: 'flex', justifyContent: 'center' }}>
+      <Link to="/PathForge">Path Forge</Link>
+        <a href="/EduHub">EduHub</a>
+        <a href="/health">Healthy Learning</a>
+        <a href="/skills">Develop skills</a>
+        <a href="/planner">Planner</a>
+        <a href="/community">Community</a>
 
-
-</center>
-</nav>
+      </div>
+    </div>
+  </nav>
   )
 }
 
 function Footer(){
 
   return(
-    <footer className="text-gray-600 body-font" id="foot-5" style= {{backgroundColor: '#f9eded97'}}>
+    <footer className="text-gray-600 body-font fixed-footer" id="foot-5" style= {{backgroundColor: '#f9eded97'}}>
       <div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
         {/* <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left md:mt-0 mt-10">
 				<a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
@@ -64,16 +61,19 @@ function Footer(){
             </h2>
             <nav className="list-none mb-10">
               <li>
-                <a className="text-gray-600 hover:text-gray-800">About</a>
+                <a className="text-gray-600 hover:text-gray-800">Path Forge</a>
               </li>
               <li>
-                <a className="text-gray-600 hover:text-gray-800">Carrers</a>
+                <a className="text-gray-600 hover:text-gray-800">Eduhub</a>
               </li>
               <li>
-                <a className="text-gray-600 hover:text-gray-800">Press</a>
+                <a className="text-gray-600 hover:text-gray-800">Health</a>
               </li>
               <li>
-                <a className="text-gray-600 hover:text-gray-800">Blog</a>
+                <a className="text-gray-600 hover:text-gray-800">Skills</a>
+              </li>
+              <li>
+                <a className="text-gray-600 hover:text-gray-800">Community</a>
               </li>
             </nav>
           </div>
@@ -153,7 +153,7 @@ function Footer(){
       <div className="bg-gray-100">
         <div className="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
           <p className="text-gray-500 text-sm text-center sm:text-left">
-            Copyright © 2023 VidhyaYartraAI. All rights reserved
+            Copyright © 2023 LeerMeester. All rights reserved
             {/* <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" class="text-gray-600 ml-1" target="_blank">@knyttneve</a> */}
           </p>
           <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
@@ -223,11 +223,21 @@ function Footer(){
 class App extends React.Component {
   render() {
   return (
-    <>
+    <Router>
        <Navbar />
+        <br /><br /><br /><br />
+        <Routes>
+          <Route path="/" element={<App2 />} />
+          <Route path="/PathForge" element={<Home />} />
+          <Route path="/EduHub" element={<EduHub />} />
+          <Route path="/health" element={<Health />} />
+          <Route path="/skills" element={<Skills />} />
+          <Route path="/planner" element={<Planner />} />
+          <Route path="/community" element={<Community />} />
 
+        </Routes>
        <Footer />
-    </>
+    </Router>
   )
 }
 }

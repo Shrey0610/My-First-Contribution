@@ -6,7 +6,7 @@ import openai
 
 app = Flask(__name__)
 model = ResNet50()
-openai.api_key = 'YOUR_API_KEY'
+openai.api_key = 'YOUR_OPENAI_API_KEY'
 
 @app.after_request
 def after_request(response):
@@ -24,18 +24,17 @@ def predict():
         # Create a file-like object from the uploaded file data
         image_data = io.BytesIO(imagefile.read())
 
-        # Read the image data and preprocess it
+        # Read the image data
         image = load_img(image_data, target_size=(224, 224))
-        image = img_to_array(image)
-        image = preprocess_input(image)
-        image = image.reshape((1, image.shape[0], image.shape[1], image.shape[2]))
 
-        # Perform prediction using the model
-        prediction = model.predict(image)
-        label = decode_predictions(prediction)[0][0][1]
+        # Perform OCR (Optical Character Recognition) to extract text from the image
+        text = perform_ocr(image)
 
-        # Use the prediction as input for the chatbot
-        chat_input = f"Image prediction: {label}. What would you like to do next?"
+        # If text is extracted, use it as input for the chatbot
+        if text:
+            chat_input = f"Text prediction: {text}. What would you like to do next?"
+        else:
+            chat_input = "No text found in the image. What would you like to do next?"
 
         # Use OpenAI to generate a response
         response = openai.ChatCompletion.create(
@@ -47,10 +46,16 @@ def predict():
         bot_response = response.choices[0].message.content.strip()
 
         # Return the response to the client
-        return jsonify({'prediction': label, 'chat_output': bot_response})
+        return jsonify({'text_prediction': text, 'chat_output': bot_response})
 
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
+def perform_ocr(image):
+    # Implement OCR logic to extract text from the image
+    # Replace this with your OCR implementation using libraries like Tesseract or OpenCV
+    # For demonstration, returning a placeholder text
+    return "Placeholder text extracted from the image"
 
 if __name__ == '__main__':
     app.run(port=9003, debug=True)

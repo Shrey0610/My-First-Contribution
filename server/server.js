@@ -4,7 +4,7 @@ const app = express();
 const cors = require('cors');
 
 const openai = new OpenAI({
-  apiKey: 'YOUR_API_KEY',  
+  apiKey: 'YOUR_API_KEY_HERE',  
 });
 
 app.use(express.json());
@@ -24,7 +24,7 @@ app.post('/chat', async (req, res) => {
 
 app.post('/chats', async (req, res) => {
   try {
-    const input = `Provide latest details and articles or blog site details on ${req.body.prompt} which tells how it affects the nature. Instructions: Include relevant links in the response.`;
+    const input = `Provide latest steps to solve- ${req.body.prompt} with details and references.`;
     const response = await main(input);
     res.json({ output: response });
     console.log(response);
